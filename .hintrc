@@ -23,6 +23,19 @@
       {
         "link-name": "off"
       }
+    ],
+    "axe/aria": [
+      "default",
+      {
+        "aria-required-parent": "off",
+        "aria-required-children": "off"
+      }
+    ],
+    "axe/structure": [
+      "default",
+      {
+        "listitem": "off"
+      }
     ]
   }
 }

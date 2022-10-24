@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Oferta } from "./shared/oferta.model"
 import { HttpClient } from "@angular/common/http"
 
+import { URL_API } from './app_api';
+
 //import 'rxjs/add/operator/toPromise'
 import { firstValueFrom } from 'rxjs';
 
@@ -12,17 +14,17 @@ export class OfertasService {
 
 
     public getOfertas(): Promise<Oferta[]> {
-        return firstValueFrom(this.http.get('http://localhost:3000/ofertas?destaque=true'))
+        return firstValueFrom(this.http.get(`${URL_API}?destaque=true`))
             .then((resposta: any) => resposta)
     }
 
     public getOfertasPorCategoria(categoria: string): Promise<Oferta[]> {
-        return firstValueFrom(this.http.get(`http://localhost:3000/ofertas?categoria=${categoria}`))
+        return firstValueFrom(this.http.get(`${URL_API}?categoria=${categoria}`))
             .then((resposta: any) => resposta)
     }
 
     public getOfertaPorId(id: number): Promise<Oferta[]> {
-        return firstValueFrom(this.http.get(`http://localhost:3000/ofertas?id=${id}`))
+        return firstValueFrom(this.http.get(`${URL_API}?id=${id}`))
             .then((resposta: any) => {
                 return resposta
             })
