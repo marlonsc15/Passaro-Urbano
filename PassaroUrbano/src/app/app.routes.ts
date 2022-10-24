@@ -1,3 +1,5 @@
+import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
+import { ComoUsarComponent } from './oferta/como-usar/como-usar.component';
 import { OfertaComponent } from './oferta/oferta.component';
 import { Routes } from "@angular/router";
 
@@ -24,7 +26,15 @@ export const ROUTES: Routes = [
     },
     {
         path: 'oferta/:id',
-        component: OfertaComponent
+        component: OfertaComponent,
+        children: [
+            {   path: '', 
+                component: ComoUsarComponent},
+            {   path: 'como-usar', 
+                component: ComoUsarComponent},
+            {   path: 'onde-fica',
+                component: OndeFicaComponent},
+        ]
     }
 
 ]

@@ -14,20 +14,27 @@ export class OfertasService {
 
 
     public getOfertas(): Promise<Oferta[]> {
-        return firstValueFrom(this.http.get(`${URL_API}?destaque=true`))
+        return firstValueFrom(this.http.get(`${URL_API}/ofertas?destaque=true`))
             .then((resposta: any) => resposta)
     }
 
     public getOfertasPorCategoria(categoria: string): Promise<Oferta[]> {
-        return firstValueFrom(this.http.get(`${URL_API}?categoria=${categoria}`))
+        return firstValueFrom(this.http.get(`${URL_API}/ofertas?categoria=${categoria}`))
             .then((resposta: any) => resposta)
     }
 
     public getOfertaPorId(id: number): Promise<Oferta[]> {
-        return firstValueFrom(this.http.get(`${URL_API}?id=${id}`))
+        return firstValueFrom(this.http.get(`${URL_API}/ofertas?id=${id}`))
             .then((resposta: any) => {
                 return resposta
             })
+    }
+
+    public getComoUsarOfertaPorId(id: number): Promise<string> {
+        return firstValueFrom(this.http.get(`${URL_API}/como-usar?id=${id}`))
+        .then((resposta: any) => {
+            return resposta[0].descricao
+        })
     }
 
 }
