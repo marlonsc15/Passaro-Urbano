@@ -4,8 +4,8 @@ import { HttpClient } from "@angular/common/http"
 
 import { URL_API } from './app_api';
 
-//import 'rxjs/add/operator/toPromise'
-import { firstValueFrom } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { firstValueFrom, Observable } from 'rxjs';
 
 @Injectable()
 export class OfertasService {
@@ -44,5 +44,9 @@ export class OfertasService {
         })
     }
 
+    public pesquisaOferta(termo:string): Observable<Oferta[]>{
+        return this.http.get(`${URL_API}?descricao_oferta_like=${termo}`)
+        .pipe(map((resposta: any)=> resposta.json()))
+        }
 }
 
