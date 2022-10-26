@@ -35,7 +35,7 @@
 
         <div class="row">
           <div class="col text-center">
-            <h1 *ngFor="let item of oferta">R${{item.valor}}</h1>
+            <h1 *ngFor="let item of oferta">{{ item.valor | currency:'BRL':'symbol'}}</h1>
           </div>
         </div>
 

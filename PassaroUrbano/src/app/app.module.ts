@@ -1,8 +1,9 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule} from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-
+import { registerLocaleData } from '@angular/common';
+import localePtBr from '@angular/common/locales/pt'
 import { ROUTES } from './app.routes';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -34,7 +35,9 @@ import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
     HttpClientModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [],
+  providers: [ { provide: LOCALE_ID, useValue: 'pt'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+registerLocaleData(localePtBr)

@@ -24,3 +24,8 @@
 }
 
 nav { background-color: white;}
+
+
+.list-group {
+    position: absolute;
+}
