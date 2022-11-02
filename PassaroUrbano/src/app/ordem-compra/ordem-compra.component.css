@@ -1,4 +1,15 @@
-.ordem-compra {
+.container {
     margin-top: 50px;
     margin-bottom: 150px;
 }
+
+
+select,input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+select,input.ng-valid.ng-touched { 
+    border: 1px solid rgb(1, 184, 1);
+} 
+
+
