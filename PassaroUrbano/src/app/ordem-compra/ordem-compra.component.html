@@ -1,6 +1,6 @@
 <div class="container">
   <div class="ordem-compra">
-    <form novalidate #formulario="ngForm" (ngSubmit)="confirmarCompra()">
+    <!--<form novalidate>-->
     
       <h5>Sua Compra</h5>
       <hr />
@@ -62,10 +62,6 @@
       </div>
       <br />
 
-      <pre>Valido = {{formulario.valid | json}}</pre>
-      <pre>Invalido = {{formulario.invalid | json}}</pre>
-      <pre>{{formulario.value | json}}</pre>
-
       <h5>Dados de entrega</h5>
       <hr />
 
@@ -77,12 +73,8 @@
             class="form-control" 
             placeholder="Endereço" 
             autocomplete="off" 
-            minlength="5" 
-            name="endereco"
-            ngModel
-            required
           >
-          <small class="form-text text-danger">Endereço inválido</small>
+          <small class="form-text text-success">Ok</small>
         </div>
 
         <div class="form-group col-md-2">
@@ -90,11 +82,7 @@
             type="text" 
             class="form-control" 
             placeholder="Número" 
-            autocomplete="off" 
-            minlength="1"
-            name="numero"
-            ngModel
-            required
+            autocomplete="off"
           >
           <small class="form-text text-success">Ok</small>
         </div>
@@ -104,8 +92,6 @@
             type="text" 
             class="form-control" 
             placeholder="Complemento" 
-            name="complemento"
-            ngModel
             autocomplete="off"
           >
         </div>
@@ -121,22 +107,20 @@
         <div class="form-group col-md-3">
           <select 
             class="form-control"
-            ngModel
-            name="formaPagamento"
           >
             <option value="">Selecione uma opção</option>
             <option value="dinheiro">Dinheiro</option>
             <option value="debito">Débito</option>
           </select>
-          <small class="form-text text-danger">Forma de pagamento inválida</small>
+          <small class="form-text text-success">Ok</small>
         </div>
       </div>
 
       <hr />
       <button 
-        type="submit " 
+        type="submit" 
         class="btn btn-primary btn-lg"
       >Cofirmar compra</button>
-    </form>
+    <!--</form>-->
   </div>
 </div>
