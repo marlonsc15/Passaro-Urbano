@@ -220,6 +220,13 @@
       "complemento": "kdigj",
       "formaPagamento": "debito",
       "id": 5
+    },
+    {
+      "endereco": "asjdjd",
+      "numero": "1234",
+      "complemento": "adsd",
+      "formaPagamento": "dinheiro",
+      "id": 6
     }
   ]
 }
