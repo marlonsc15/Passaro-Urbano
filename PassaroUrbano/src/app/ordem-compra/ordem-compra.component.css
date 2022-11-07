@@ -20,3 +20,6 @@ select.ng-valid.ng-touched {
     border: 1px solid rgb(1, 184, 1);
 }  
 
+.carrinhoVazio {
+    color: red;
+}
